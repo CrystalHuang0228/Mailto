@@ -1,9 +1,289 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <meta http-equiv="refresh" content="0; url=mailto:crystalhuang0228@gmail.com">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="refresh" content="3; url=mailto:crystalhuang0228@gmail.com"> -->
+    <title>Contact Crystal Huang</title>
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --secondary: #f59e0b;
+            --dark: #1e293b;
+            --light: #f8fafc;
+            --success: #10b981;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: var(--dark);
+        }
+        
+        .container {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            overflow: hidden;
+            text-align: center;
+            position: relative;
+            transform: scale(0.95);
+            animation: scaleIn 0.5s ease-out forwards;
+        }
+        
+        @keyframes scaleIn {
+            to { transform: scale(1); }
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 30px 20px;
+            position: relative;
+        }
+        
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 4px solid white;
+            margin: 0 auto 15px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 32px;
+            font-weight: bold;
+            color: var(--primary);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 22px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .subtitle {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+        
+        .content {
+            padding: 30px 25px;
+        }
+        
+        .loading-bar {
+            height: 6px;
+            background: #e2e8f0;
+            border-radius: 3px;
+            margin: 20px 0 30px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .loading-progress {
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 0;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 3px;
+            animation: loading 2.5s ease-in-out forwards;
+        }
+        
+        @keyframes loading {
+            to { width: 100%; }
+        }
+        
+        .email-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            margin: 10px 0;
+            box-shadow: 0 5px 15px rgba(99, 102, 241, 0.3);
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .email-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+        }
+        
+        .email-btn:active {
+            transform: translateY(0);
+        }
+        
+        .email-address {
+            margin: 25px 0;
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 16px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .email-address::before {
+            content: "✉️";
+            margin-right: 10px;
+            font-size: 18px;
+        }
+        
+        .copy-btn {
+            background: var(--light);
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 5px 10px;
+            font-size: 12px;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .copy-btn:hover {
+            background: #edf2f7;
+        }
+        
+        .success-message {
+            color: var(--success);
+            font-size: 14px;
+            margin-top: 5px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--dark);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .footer {
+            font-size: 12px;
+            color: #94a3b8;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #f1f5f9;
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                border-radius: 12px;
+            }
+            
+            .header {
+                padding: 25px 15px;
+            }
+            
+            .content {
+                padding: 25px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <p>If not automatically redirected, please<a href="mailto:crystalhuang0228@gmail.com">click here</a>to send an email to me</p>
+    <div class="container">
+        <div class="header">
+            <div class="avatar">CH</div>
+            <h1>Crystal Huang</h1>
+            <p class="subtitle">Reseach Question | Research Collaboration</p>
+        </div>
+        
+        <div class="content">
+            <p>Ready for redirecting to email app...</p>
+            
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
+            </div>
+            
+            <a href="javascript:void(0);" onclick="redirectToEmail()" class="email-btn">Click to Send Email</a>
+            <p class="success-message" id="redirectMsg"></p>
+            
+            <div class="email-address">
+                crystalhuang0228@gmail.com
+                <button class="copy-btn" onclick="copyEmail()">Copy</button>
+            </div>
+            <p class="success-message" id="copySuccess">Copied to clipboard!</p>
+            
+            <div class="social-links">
+                <a href="https://x.com/CrystalPullman" class="social-link">X</a>
+                <a href="https://u.wechat.com/MNwXiYY_FspgBIZa7PU6ZnE" class="social-link">WeChat</a>
+            </div>
+            
+            <div class="footer">
+                <p>© 2025 Crystal Huang. All rights reserved</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyEmail() {
+            const email = 'crystalhuang0228@gmail.com';
+            navigator.clipboard.writeText(email).then(() => {
+                const successMsg = document.getElementById('copySuccess');
+                successMsg.style.opacity = '1';
+                setTimeout(() => {
+                    successMsg.style.opacity = '0';
+                }, 2000);
+            });
+        }
+        
+        function redirectToEmail() {
+            const redirectMsg = document.getElementById('redirectMsg');
+            //redirectMsg.textContent = "Redirecting to email app...";
+            //redirectMsg.style.opacity = '1';
+            
+            setTimeout(() => {
+                window.location.href = 'mailto:crystalhuang0228@gmail.com';
+            }, 0);
+        }
+    </script>
 </body>
 </html>
